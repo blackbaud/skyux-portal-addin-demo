@@ -1,0 +1,62 @@
+<sky-page>
+  <sky-fluid-grid>
+    <sky-row>
+      <sky-column [screenXSmall]="12">
+        <div class="sky-margin-stacked-default sky-font-deemphasized">
+          This controls visibility of event features in the donor portal. It also controls which events can be registered for.
+        </div>
+      </sky-column>
+      <sky-column [screenXSmall]="4" [screenSmall]="2">
+        <div *ngIf="eventService.registrationEnabled" class="btn-align">
+          <span>
+            <sky-icon
+              class="sky-highlight-success"
+              icon="check"
+            ></sky-icon>
+            Enabled
+          </span>
+        </div>
+        <div *ngIf="!eventService.registrationEnabled" class="btn-align">
+          Disabled
+        </div>
+      </sky-column>
+      <sky-column [screenXSmall]="4" [screenSmall]="2">
+        <div *ngIf="eventService.registrationEnabled">
+          <button
+            [id]="'addin_edit'"
+            class="sky-btn sky-btn-link"
+            type="button"
+            (click)="actionClicked('edit')"
+          >
+            <sky-icon
+              class="sky-highlight-info"
+              icon="pencil"
+            ></sky-icon>
+            Edit
+          </button>
+        </div>
+        <div *ngIf="!eventService.registrationEnabled">
+          <button
+            [id]="'addin_enable'"
+            class="sky-btn sky-btn-default"
+            type="button"
+            (click)="actionClicked('enable')"
+          >
+            Enable feature
+          </button>
+        </div>
+      </sky-column>
+      <sky-column [screenXSmall]="4" [screenSmall]="2">
+        <div *ngIf="eventService.registrationEnabled">
+          <button
+            [id]="'addin_disable'"
+            class="sky-btn sky-btn-link"
+            (click)="actionClicked('disable')"
+          >
+            Disable feature
+          </button>
+        </div>
+      </sky-column>
+    </sky-row>
+  </sky-fluid-grid>
+</sky-page>

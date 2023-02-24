@@ -1,0 +1,20 @@
+<sky-modal>
+  <sky-modal-header>Events open for registration</sky-modal-header>
+  <sky-modal-content>
+    <div class="sky-margin-stacked-xl" *ngIf="events$ | async as events">
+      <ol>
+        <li *ngFor="let event of events" class="sky-font-emphasized sky-margin-stacked-separate">
+          {{ event.name }}
+          <button class="sky-btn sky-btn-default" type="button" (click)="register(event)">
+            Register
+          </button>
+        </li>
+      </ol>
+    </div>
+  </sky-modal-content>
+  <sky-modal-footer>
+    <button class="sky-btn sky-btn-link" type="button" (click)="instance.cancel()">
+      Close
+    </button>
+  </sky-modal-footer>
+</sky-modal>

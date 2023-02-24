@@ -1,27 +1,41 @@
 # SkyuxPortalAddinDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+This project serves to demonstrate creating SKYUX Add-ins for the Blackbaud Raiser's Edge NXT Portal by mimicking an event registration application. It's an Angular 14 project that manually deploys to Github pages.
 
-## Development server
+# Running Locally
+`ng serve` will run the project locally.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Deploying to Github Pages (Blackbaud Employees Only)
+Running `ng deploy --base-href=/skyux-portal-addin-demo/` will deploy your current local project to Github pages, assuming you have access to the repo.
 
-## Code scaffolding
+The code that is deployed will be available at `https://blackbaud.github.io/skyux-portal-addin-demo/`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Note that it will not automatically deploy the main branch - it will deploy whatever branch you are currently on.**
 
-## Build
+# Code structure
+This SPA contains 3 main components under the addins folder. Each component is designed to demonstrate a different extension point of the Portal. It loosely follows the theme of registering for an event.
+None of the data is persisted, so each part is not connected to any of the others; however, you can add data persistence to this application to make it fully functional.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Settings add-in
+This add-in demonstrates how to create a settings add-in used by a back-office user in RENXT. It is located in the `addins/settings` folder. It displays a small item in the Portal settings that allows the back-office user to turn off event registration or view events that are eligible for registration.
 
-## Running unit tests
+### Portal Action add-in
+This add-in demonstrates creating a home page action for a portal user. It is located in the `addins/portal-action` folder. It displays an action button in the Portal home page that when clicked opens a modal that allows the portal user to register for an event. This uses the portal user's RENXT Constituent ID as the identifier for the user, and demonstrates how to get that ID from the User Identity Token.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Profile Tab add-in
+This add-in demonstrates creating a profile tab for a portal user. It is located in the `addins/profile-tab` folder. It displays a tab in the Portal profile page that allows the portal user to view events that they have registered for. This uses the portal user's RENXT Constituent ID as the identifier for the user, and demonstrates how to get that ID from the User Identity Token.
 
-## Running end-to-end tests
+# Viewing the Add-ins
+If you want to see what these look like in RENXT and the portal, you can create an application that uses the add-ins.
+1. Create a SKY Application or find an existing one
+2. Register the add-ins in the application:
+    1. On the `Portal Feature Configuration Item` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/settings`
+   2. On the `Portal Home Page Action` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/action`
+   3. On the `Portal Profile Page Tab` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/profile`
+4. Connect your application to an RENXT environment that has the Portal enabled (or enable the Portal https://host.nxt.blackbaud.com/tools-settings/)
+5. The Settings add-in can be seen by a back-office user https://host.nxt.blackbaud.com/tools-settings/
+6. The other two add-ins can be seen by launching the portal at your configured URL, and viewing both the home page of the portal and the profile page of the portal.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# More Information
+For more information on Blackbaud's SKY Add-in framework, see https://developer.blackbaud.com/skyapi/docs/addins.
+    
