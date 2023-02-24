@@ -29,7 +29,12 @@ export class PortalActionComponent implements OnInit {
         switchMap(() => this.getUserIdentityToken())
       ).subscribe((userIdentityToken) => {
 
-      const addinModal = window.location.origin + '/addins/action/register';
+      let addinModal = window.location.origin + '/addins/action/register';
+
+      // the deployed url doesn't work the same as the localhost. This is a workaround.
+      if (addinModal.includes('github.io')) {
+        addinModal = window.location.origin + '/skyux-portal-addin-demo' + '/addins/action/register'
+      }
       this.addinClientService.showModal({ url: addinModal, context: { userIdentity: userIdentityToken }});
     });
   }

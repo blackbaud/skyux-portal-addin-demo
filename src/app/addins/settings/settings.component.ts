@@ -22,8 +22,14 @@ export class SettingsComponent implements OnInit {
 
   public actionClicked(action: 'edit' | 'disable' | 'enable'): void {
     if (action === 'edit') {
-      const addinModal = window.location.origin + '/addins/settings/edit';
-      this.addinClientService.showModal({ url: addinModal })
+      let addinModal = window.location.origin + '/addins/settings/edit';
+
+      // the deployed url doesn't work the same as the localhost. This is a workaround.
+      if (addinModal.includes('github.io')) {
+        addinModal = window.location.origin + '/skyux-portal-addin-demo' + '/addins/settings/edit';
+      }
+
+      this.addinClientService.showModal({ url: addinModal });
     }
 
     if (action === 'disable') {
