@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "skyux-portal-addin-demo:build:production"
+              "buildTarget": "skyux-portal-addin-demo:build:production"
             },
             "development": {
-              "browserTarget": "skyux-portal-addin-demo:build:development"
+              "buildTarget": "skyux-portal-addin-demo:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "skyux-portal-addin-demo:build"
+            "buildTarget": "skyux-portal-addin-demo:build"
           }
         },
         "test": {
