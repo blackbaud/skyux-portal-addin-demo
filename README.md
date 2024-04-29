@@ -1,6 +1,6 @@
 # SkyuxPortalAddinDemo
 
-This project serves to demonstrate creating SKYUX Add-ins for the Blackbaud Raiser's Edge NXT Portal by mimicking an event registration application. It's an Angular 14 project that manually deploys to Github pages.
+This project serves to demonstrate creating SKYUX Add-ins for the Blackbaud Raiser's Edge NXT Portal by mimicking an event registration application. It's an Angular 17 project that manually deploys to Github pages.
 
 # Running Locally
 `ng serve` will run the project locally.
