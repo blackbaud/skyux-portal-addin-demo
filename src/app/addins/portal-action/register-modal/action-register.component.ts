@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
-import { SkyModalCloseArgs, SkyModalService } from '@skyux/modals';
+import { SkyModalCloseArgs, SkyModalLegacyService } from '@skyux/modals';
 import { RegisterModalContext } from './register-modal-context';
 import { RegisterModalComponent } from './register-modal.component';
 
@@ -21,7 +21,7 @@ import { RegisterModalComponent } from './register-modal.component';
 })
 export class ActionRegisterComponent implements OnInit {
   constructor(
-    private modalService: SkyModalService,
+    private modalService: SkyModalLegacyService,
     private addinClientService: AddinClientService
   ) {}
 
