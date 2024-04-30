@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
-import { SkyModalCloseArgs, SkyModalService } from '@skyux/modals';
+import { SkyModalCloseArgs, SkyModalLegacyService } from '@skyux/modals';
 import { EditModalComponent } from './edit-modal.component';
 
 @Component({
@@ -19,7 +19,7 @@ import { EditModalComponent } from './edit-modal.component';
 })
 export class EditSettingsComponent implements OnInit {
   constructor(
-    private modalService: SkyModalService,
+    private modalService: SkyModalLegacyService,
     private addinClientService: AddinClientService
   ) {}
 
