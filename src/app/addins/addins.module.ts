@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { SkyCheckboxModule, SkyInputBoxModule } from '@skyux/forms';
-import { SkyIconModule } from '@skyux/indicators';
+import { SkyIconModule } from '@skyux/icon';
+
 import { SkyDescriptionListModule, SkyFluidGridModule, SkyPageModule } from '@skyux/layout';
 import { SkyModalModule } from '@skyux/modals';
 

@@ -1,6 +1,6 @@
 # SkyuxPortalAddinDemo
 
-This project serves to demonstrate creating SKYUX Add-ins for the Blackbaud Raiser's Edge NXT Portal by mimicking an event registration application. It's an Angular 17 project that manually deploys to Github pages.
+This project serves to demonstrate creating SKYUX Add-ins for the Blackbaud Raiser's Edge NXT Portal by mimicking an event registration application. It's an Angular 18 project that manually deploys to Github pages.
 
 # Running Locally
 `ng serve` will run the project locally.
@@ -30,8 +30,8 @@ If you want to see what these look like in RENXT and the portal, you can create 
 1. Create a SKY Application or find an existing one
 2. Register the add-ins in the application:
     1. On the `Portal Feature Configuration Item` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/settings`
-   2. On the `Portal Home Page Action` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/action`
-   3. On the `Portal Profile Page Tab` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/profile`
+    2. On the `Portal Home Page Action` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/action`
+    3. On the `Portal Profile Page Tab` extension point, register an add-in with URL `https://blackbaud.github.io/skyux-portal-addin-demo/addins/profile`
 4. Connect your application to an RENXT environment that has the Portal enabled (or enable the Portal https://host.nxt.blackbaud.com/tools-settings/)
 5. The Settings add-in can be seen by a back-office user https://host.nxt.blackbaud.com/tools-settings/
 6. The other two add-ins can be seen by launching the portal at your configured URL, and viewing both the home page of the portal and the profile page of the portal.
