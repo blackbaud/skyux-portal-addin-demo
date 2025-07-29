@@ -6,18 +6,19 @@ import { RegisterModalContext } from './register-modal-context';
 import { RegisterModalComponent } from './register-modal.component';
 
 @Component({
-  selector: 'app-action-register',
-  template: ``,
-  // These styles ensure that the backdrop behind the modal can be seen
-  styles: [
-    `::ng-deep body {
+    selector: 'app-action-register',
+    template: ``,
+    // These styles ensure that the backdrop behind the modal can be seen
+    styles: [
+        `::ng-deep body {
       background: transparent;
     }
 
     ::ng-deep .sky-modal-host-backdrop {
       display: none;
     }`
-  ]
+    ],
+    standalone: false
 })
 export class ActionRegisterComponent implements OnInit {
   constructor(

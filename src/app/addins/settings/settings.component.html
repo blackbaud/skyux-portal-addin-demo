@@ -9,9 +9,9 @@
       <sky-column [screenXSmall]="4" [screenSmall]="2">
         <div *ngIf="eventService.registrationEnabled" class="btn-align">
           <span>
-            <sky-icon
+            <sky-icon size="md"
               class="sky-highlight-success"
-              icon="check"
+              iconName="checkmark"
             ></sky-icon>
             Enabled
           </span>
@@ -28,9 +28,9 @@
             type="button"
             (click)="actionClicked('edit')"
           >
-            <sky-icon
+            <sky-icon size="md"
               class="sky-highlight-info"
-              icon="pencil"
+              iconName="edit"
             ></sky-icon>
             Edit
           </button>

@@ -7,9 +7,10 @@ import { UserIdentityToken } from '../../shared/user-identity-token';
 import { Event } from '../../shared/event';
 
 @Component({
-  selector: 'app-profile-tab',
-  templateUrl: './profile-tab.component.html',
-  styleUrls: ['./profile-tab.component.scss']
+    selector: 'app-profile-tab',
+    templateUrl: './profile-tab.component.html',
+    styleUrls: ['./profile-tab.component.scss'],
+    standalone: false
 })
 export class ProfileTabComponent implements OnInit {
   public userIdentityToken?: UserIdentityToken;

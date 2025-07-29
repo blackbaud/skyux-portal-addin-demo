@@ -5,17 +5,18 @@ import { SkyModalCloseArgs, SkyModalLegacyService } from '@skyux/modals';
 import { EditModalComponent } from './edit-modal.component';
 
 @Component({
-  selector: 'app-edit-settings',
-  template: ``,
-  styles: [
-    `::ng-deep body {
+    selector: 'app-edit-settings',
+    template: ``,
+    styles: [
+        `::ng-deep body {
       background: transparent;
     }
 
     ::ng-deep .sky-modal-host-backdrop {
       display: none;
     }`
-  ]
+    ],
+    standalone: false
 })
 export class EditSettingsComponent implements OnInit {
   constructor(
