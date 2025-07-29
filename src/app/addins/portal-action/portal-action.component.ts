@@ -5,8 +5,9 @@ import { map, Observable, switchMap } from 'rxjs';
 import { UserIdentityToken } from '../../shared/user-identity-token';
 
 @Component({
-  selector: 'app-portal-action',
-  template: ``
+    selector: 'app-portal-action',
+    template: ``,
+    standalone: false
 })
 export class PortalActionComponent implements OnInit {
 

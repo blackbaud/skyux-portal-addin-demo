@@ -3,9 +3,10 @@ import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { EventServiceService } from '../../shared/event-service.service';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+    selector: 'app-settings',
+    templateUrl: './settings.component.html',
+    styleUrls: ['./settings.component.scss'],
+    standalone: false
 })
 export class SettingsComponent implements OnInit {
 

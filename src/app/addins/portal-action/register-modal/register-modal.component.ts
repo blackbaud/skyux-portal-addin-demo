@@ -7,9 +7,10 @@ import { EventServiceService } from '../../../shared/event-service.service';
 import { RegisterModalContext } from './register-modal-context';
 
 @Component({
-  selector: 'app-register-modal',
-  templateUrl: './register-modal.component.html',
-  styleUrls: ['./register-modal.component.scss']
+    selector: 'app-register-modal',
+    templateUrl: './register-modal.component.html',
+    styleUrls: ['./register-modal.component.scss'],
+    standalone: false
 })
 export class RegisterModalComponent {
   public events$: Observable<Event[]> = of([]);
