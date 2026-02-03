@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
-import { SkyModalInstance } from '@skyux/modals';
+import { SkyModalInstance, SkyModalModule } from '@skyux/modals';
 import { Observable, of } from 'rxjs';
 import { Event } from '../../../shared/event';
 import { EventServiceService } from '../../../shared/event-service.service';
@@ -10,17 +11,17 @@ import { RegisterModalContext } from './register-modal-context';
     selector: 'app-register-modal',
     templateUrl: './register-modal.component.html',
     styleUrls: ['./register-modal.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, SkyModalModule]
 })
 export class RegisterModalComponent {
   public events$: Observable<Event[]> = of([]);
+  public instance = inject(SkyModalInstance);
+  private eventsService = inject(EventServiceService);
+  private addinClientService = inject(AddinClientService);
+  private context = inject(RegisterModalContext);
 
-  constructor(
-    public instance: SkyModalInstance,
-    private eventsService: EventServiceService,
-    private addinClientService: AddinClientService,
-    private context: RegisterModalContext,
-  ) {
+  constructor() {
     // if this were a real app that persisted data, this should filter to just the events that the user has not registered for yet
     // it would also use the environment ID of the user to get events for that specific customer
     this.events$ = this.eventsService.events;

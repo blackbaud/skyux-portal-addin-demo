@@ -4,27 +4,33 @@
   </h2>
   <div class="sky-margin-stacked-separate">
     <sky-description-list mode="vertical">
-      <sky-description-list-content *ngIf="userIdentityToken">
-        <sky-description-list-term>
-          RENXT Constituent ID
-        </sky-description-list-term>
-        <sky-description-list-description>
-          {{ userIdentityToken["1bb.ptlpn"] }}
-        </sky-description-list-description>
-      </sky-description-list-content>
+      @if (userIdentityToken) {
+        <sky-description-list-content>
+          <sky-description-list-term>
+            RENXT Constituent ID
+          </sky-description-list-term>
+          <sky-description-list-description>
+            {{ userIdentityToken["1bb.ptlpn"] }}
+          </sky-description-list-description>
+        </sky-description-list-content>
+      }
 
-      <sky-description-list-content *ngIf="participantEvents && participantEvents.length > 0">
-        <sky-description-list-term>
-          Events
-        </sky-description-list-term>
-        <sky-description-list-description>
-          <ol class="sky-list-unstyled">
-            <li *ngFor="let event of participantEvents" class="sky-font-emphasized">
-              {{ event.name }}
-            </li>
-          </ol>
-        </sky-description-list-description>
-      </sky-description-list-content>
+      @if (participantEvents && participantEvents.length > 0) {
+        <sky-description-list-content>
+          <sky-description-list-term>
+            Events
+          </sky-description-list-term>
+          <sky-description-list-description>
+            <ol class="sky-list-unstyled">
+              @for (event of participantEvents; track event.id) {
+                <li class="sky-font-emphasized">
+                  {{ event.name }}
+                </li>
+              }
+            </ol>
+          </sky-description-list-description>
+        </sky-description-list-content>
+      }
     </sky-description-list>
   </div>
 </sky-page>

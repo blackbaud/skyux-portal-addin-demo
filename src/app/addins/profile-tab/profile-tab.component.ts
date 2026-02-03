@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import jwt_decode from 'jwt-decode';
 import { map, Observable } from 'rxjs';
 import { EventServiceService } from '../../shared/event-service.service';
 import { UserIdentityToken } from '../../shared/user-identity-token';
 import { Event } from '../../shared/event';
+import { SkyPageModule } from '@skyux/pages';
+import { SkyDescriptionListModule } from '@skyux/layout';
 
 @Component({
     selector: 'app-profile-tab',
     templateUrl: './profile-tab.component.html',
     styleUrls: ['./profile-tab.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, SkyPageModule, SkyDescriptionListModule]
 })
 export class ProfileTabComponent implements OnInit {
   public userIdentityToken?: UserIdentityToken;
-
   public participantEvents: Event[] = [];
-
-  constructor(private addinClientService: AddinClientService, private eventsService: EventServiceService) { }
+  private addinClientService = inject(AddinClientService);
+  private eventsService = inject(EventServiceService);
 
   public ngOnInit(): void {
     this.addinClientService.args.subscribe(args => {
