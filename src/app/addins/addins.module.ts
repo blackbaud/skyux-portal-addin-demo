@@ -5,7 +5,7 @@ import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { SkyCheckboxModule, SkyInputBoxModule } from '@skyux/forms';
 import { SkyIconModule } from '@skyux/icon';
 
-import { SkyDescriptionListModule, SkyFluidGridModule, SkyPageModule } from '@skyux/layout';
+import { SkyDescriptionListModule, SkyFluidGridModule } from '@skyux/layout';
 import { SkyModalModule } from '@skyux/modals';
 
 import { AddinsRoutingModule } from './addins-routing.module';
@@ -17,18 +17,11 @@ import { SkyThemeService } from '@skyux/theme';
 import { PortalActionComponent } from './portal-action/portal-action.component';
 import { RegisterModalComponent } from './portal-action/register-modal/register-modal.component';
 import { ProfileTabComponent } from './profile-tab/profile-tab.component';
+import { SkyPageModule } from '@skyux/pages';
 
 
 @NgModule({
-  declarations: [
-    SettingsComponent,
-    EditModalComponent,
-    EditSettingsComponent,
-    PortalActionComponent,
-    RegisterModalComponent,
-    ActionRegisterComponent,
-    ProfileTabComponent
-  ],
+  declarations: [],
     imports: [
         CommonModule,
         AddinsRoutingModule,
@@ -39,7 +32,14 @@ import { ProfileTabComponent } from './profile-tab/profile-tab.component';
         SkyInputBoxModule,
         ReactiveFormsModule,
         SkyCheckboxModule,
-        SkyDescriptionListModule
+        SkyDescriptionListModule,
+        SettingsComponent,
+        EditModalComponent,
+        EditSettingsComponent,
+        PortalActionComponent,
+        RegisterModalComponent,
+        ActionRegisterComponent,
+        ProfileTabComponent
     ],
   providers: [
     AddinClientService,

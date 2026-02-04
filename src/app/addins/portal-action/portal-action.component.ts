@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import jwt_decode from 'jwt-decode';
 import { map, Observable, switchMap } from 'rxjs';
@@ -7,11 +7,11 @@ import { UserIdentityToken } from '../../shared/user-identity-token';
 @Component({
     selector: 'app-portal-action',
     template: ``,
-    standalone: false
+    standalone: true,
+    imports: []
 })
 export class PortalActionComponent implements OnInit {
-
-  constructor(private addinClientService: AddinClientService) { }
+  private addinClientService = inject(AddinClientService);
 
   ngOnInit(): void {
     this.addinClientService.args.subscribe(args => {

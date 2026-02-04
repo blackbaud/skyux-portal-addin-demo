@@ -1,13 +1,17 @@
 <sky-modal>
   <sky-modal-header>Events open for registration</sky-modal-header>
   <sky-modal-content>
-    <div class="sky-margin-stacked-xl" *ngIf="events$ | async as events">
-      <ol>
-        <li *ngFor="let event of events" class="sky-font-emphasized">
-          {{ event.name }}
-        </li>
-      </ol>
-    </div>
+    @if (events$ | async; as events) {
+      <div class="sky-margin-stacked-xl">
+        <ol>
+          @for (event of events; track event.id) {
+            <li class="sky-font-emphasized">
+              {{ event.name }}
+            </li>
+          }
+        </ol>
+      </div>
+    }
 
     <p>
       A real application that persisted settings could use this modal to toggle whether the events were actually open for registration;
