@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { EventServiceService } from '../../shared/event-service.service';
 import { SkyPageModule } from '@skyux/pages';
@@ -11,7 +11,7 @@ import { SkyIconModule } from '@skyux/icon';
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.scss'],
     standalone: true,
-    imports: [CommonModule, SkyPageModule, SkyFluidGridModule, SkyIconModule]
+    imports: [SkyPageModule, SkyFluidGridModule, SkyIconModule]
 })
 export class SettingsComponent implements OnInit {
   private addinClientService = inject(AddinClientService);

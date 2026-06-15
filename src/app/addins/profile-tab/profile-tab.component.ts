@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import jwt_decode from 'jwt-decode';
 import { map, Observable } from 'rxjs';
@@ -14,7 +14,7 @@ import { SkyDescriptionListModule } from '@skyux/layout';
     templateUrl: './profile-tab.component.html',
     styleUrls: ['./profile-tab.component.scss'],
     standalone: true,
-    imports: [CommonModule, SkyPageModule, SkyDescriptionListModule]
+    imports: [SkyPageModule, SkyDescriptionListModule]
 })
 export class ProfileTabComponent implements OnInit {
   public userIdentityToken?: UserIdentityToken;

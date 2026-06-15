@@ -2,7 +2,7 @@
   <h2>
     Event Registration Details
   </h2>
-  <div class="sky-margin-stacked-separate">
+  <div class="sky-theme-margin-bottom-xl">
     <sky-description-list mode="vertical">
       @if (userIdentityToken) {
         <sky-description-list-content>
@@ -21,9 +21,9 @@
             Events
           </sky-description-list-term>
           <sky-description-list-description>
-            <ol class="sky-list-unstyled">
+            <ol class="sky-theme-list-unstyled">
               @for (event of participantEvents; track event.id) {
-                <li class="sky-font-emphasized">
+                <li class="sky-theme-font-body-emphasized-m">
                   {{ event.name }}
                 </li>
               }
