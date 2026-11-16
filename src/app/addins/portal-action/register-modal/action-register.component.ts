@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { SkyModalCloseArgs, SkyModalLegacyService } from '@skyux/modals';
@@ -19,6 +19,7 @@ import { RegisterModalComponent } from './register-modal.component';
     }`
     ],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class ActionRegisterComponent implements OnInit {

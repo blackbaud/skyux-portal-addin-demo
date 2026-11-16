@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkyModalInstance, SkyModalModule } from '@skyux/modals';
 import { Observable, of } from 'rxjs';
@@ -10,6 +10,7 @@ import { EventServiceService } from '../../../shared/event-service.service';
     templateUrl: './edit-modal.component.html',
     styleUrls: ['./edit-modal.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [CommonModule, SkyModalModule]
 })
 export class EditModalComponent {

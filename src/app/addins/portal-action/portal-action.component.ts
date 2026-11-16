@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import jwt_decode from 'jwt-decode';
 import { map, Observable, switchMap } from 'rxjs';
@@ -8,6 +8,7 @@ import { UserIdentityToken } from '../../shared/user-identity-token';
     selector: 'app-portal-action',
     template: ``,
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: []
 })
 export class PortalActionComponent implements OnInit {

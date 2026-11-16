@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { EventServiceService } from '../../shared/event-service.service';
@@ -11,6 +11,7 @@ import { SkyIconModule } from '@skyux/icon';
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [SkyPageModule, SkyFluidGridModule, SkyIconModule]
 })
 export class SettingsComponent implements OnInit {

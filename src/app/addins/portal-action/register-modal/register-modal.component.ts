@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { SkyModalInstance, SkyModalModule } from '@skyux/modals';
@@ -12,6 +12,7 @@ import { RegisterModalContext } from './register-modal-context';
     templateUrl: './register-modal.component.html',
     styleUrls: ['./register-modal.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [CommonModule, SkyModalModule]
 })
 export class RegisterModalComponent {
