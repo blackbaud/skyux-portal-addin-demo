@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import jwt_decode from 'jwt-decode';
@@ -14,6 +14,7 @@ import { SkyDescriptionListModule } from '@skyux/layout';
     templateUrl: './profile-tab.component.html',
     styleUrls: ['./profile-tab.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [SkyPageModule, SkyDescriptionListModule]
 })
 export class ProfileTabComponent implements OnInit {
